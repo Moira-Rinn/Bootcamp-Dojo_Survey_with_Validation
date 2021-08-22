@@ -1,0 +1,185 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="container">
+    <div class="wrapper">
+      <h1>Dojo Survey</h1>
+      <div>
+        <form action="/process" method="post">
+          
+          <input class="form-control" type="text" placeholder="First Name" name="firstName" id="firstName">
+          <input class="form-control" type="text" placeholder="Last Name" name="lastName" id="lastName">
+          <input class="form-control" type="text" placeholder="Email" name="email" id="email">
+          <label for="location">Dojo Location:</label>
+          <select class="form-control" name="location" id="location">
+            <option value="New York City">New York City, New York</option>
+            <option value="Los Angeles">Los Angeles, California</option>
+            <option value="Chicago">Chicago, Illinois</option>
+            <option value="Houston">Houston, Texas</option>
+            <option value="Phoenix">Phoenix, Arizona</option>
+            <option value="Philadelphia">Philadelphia, Pennsylvania</option>
+            <option value="San Antonio">San Antonio, Texas</option>
+            <option value="San Diego">San Diego, California</option>
+            <option value="Dallas">Dallas, Texas</option>
+            <option value="Austin">Austin, Texas</option>
+            <option value="San Jose">San Jose, California</option>
+            <option value="Fort Worth">Fort Worth, Texas</option>
+            <option value="Jacksonville">Jacksonville, Florida</option>
+            <option value="Columbus">Columbus, Ohio</option>
+            <option value="Charlotte">Charlotte, North Carolina</option>
+            <option value="Indianapolis">Indianapolis, Indiana</option>
+            <option value="San Francisco">San Francisco, California</option>
+            <option value="Seattle">Seattle, Washington</option>
+            <option value="Denver">Denver, Colorado</option>
+            <option value="Washington">Washington, District of Columbia</option>
+            <option value="Boston">Boston, Massachusetts</option>
+            <option value="El Paso">El Paso, Texas</option>
+            <option value="Nashville">Nashville, Tennessee</option>
+            <option value="Oklahoma City">Oklahoma City, Oklahoma</option>
+            <option value="Las Vegas">Las Vegas, Nevada</option>
+            <option value="Detroit">Detroit, Michigan</option>
+            <option value="Portland">Portland, Oregon</option>
+            <option value="Memphis">Memphis, Tennessee</option>
+            <option value="Louisville">Louisville, Kentucky</option>
+            <option value="Milwaukee">Milwaukee, Wisconsin</option>
+            <option value="Baltimore">Baltimore, Maryland</option>
+            <option value="Albuquerque">Albuquerque, New Mexico</option>
+            <option value="Tucson">Tucson, Arizona</option>
+            <option value="Mesa">Mesa, Arizona</option>
+            <option value="Fresno">Fresno, California</option>
+            <option value="Sacramento">Sacramento, California</option>
+            <option value="Atlanta">Atlanta, Georgia</option>
+            <option value="Kansas City">Kansas City, Missouri</option>
+            <option value="Colorado Springs">Colorado Springs, Colorado</option>
+            <option value="Raleigh">Raleigh, North Carolina</option>
+            <option value="Omaha">Omaha, Nebraska</option>
+            <option value="Miami">Miami, Florida</option>
+            <option value="Long Beach">Long Beach, California</option>
+            <option value="Virginia Beach">Virginia Beach, Virginia</option>
+            <option value="Oakland">Oakland, California</option>
+            <option value="Minneapolis">Minneapolis, Minnesota</option>
+            <option value="Tampa">Tampa, Florida</option>
+            <option value="Tulsa">Tulsa, Oklahoma</option>
+            <option value="Arlington">Arlington, Texas</option>
+            <option value="Wichita">Wichita, Kansas"</option>
+          <!-- {#  {% for i in range(locations) %}
+              <option value="{{location[i]}}">{{location[i]}}</option>
+            {% endfor %}#} -->
+          </select>
+          <label for="progLanguage">Favorite Programming Language:</label>
+          <select class="form-control" name="progLanguage" id="progLanguage">
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="PHP">PHP</option>
+            <option value="Java">Java</option>
+            <option value="Swift">Swift</option>
+            <option value="C++">C++</option>
+            <option value="C#">C#</option>
+            <option value="C">C</option>
+            <option value="Rust">Rust</option>
+            <option value="Cobalt">Cobalt</option>
+            <option value="Basic">Basic</option>
+          </select>
+
+          <p>Satisfied with your visit?</p>
+          
+          <div id="radio">
+
+            <div>
+              <input type="radio" id="one" name="satisfaction" value="We're so sorry :( :( :(">
+              <label for="one">1 NO! Just no.</label>
+            </div>
+            
+            <div>
+              <input type="radio" id="two" name="satisfaction" value="two">
+              <label for="two">2</label>
+            </div>
+            
+            <div>
+              <input type="radio" id="three" name="satisfaction" value="three">
+              <label for="three">3</label>
+            </div>
+            
+            <div>
+              <input type="radio" id="four" name="satisfaction" value="four">
+              <label for="four">4</label>
+            </div>
+              
+            <div>
+            <input type="radio" id="five" name="satisfaction" value="We'll do better!">
+              <label for="five">5 Meh!</label>
+            </div>
+            
+            <div>
+              <input type="radio" id="six" name="satisfaction" value="six">
+              <label for="six">6</label>
+            </div>
+            
+            <div>
+              <input type="radio" id="seven" name="satisfaction" value="seven">
+              <label for="seven">7</label>
+            </div>
+              
+            <div>
+              <input type="radio" id="eight" name="satisfaction" value="eight">
+              <label for="eight">8</label>
+            </div>
+            
+            <div>
+              <input type="radio" id="nine" name="satisfaction" value="nine">
+              <label for="nine">9</label>
+            </div>
+            
+            <div>
+              <input type="radio" id="ten" name="satisfaction" value="Ecstasy!!!">
+              <label for="ten">10 Ecstasy!</label>
+            </div>
+
+          </div>
+
+          <p>You'll be back?</p>
+
+          <div id="returning">
+            <div>
+            <input type="radio" id="yesReturning" name="willReturn" value="YES!!!">
+              <label for="yesReturning">Absolutely!!</label>
+            </div>
+            <div>
+            <input type="radio" id="notReturning" name="willReturn" value=":( :( :(">
+            <label for="notReturning">Nah, probably not...</label>
+            </div>
+          </div>
+
+          <p>What'd you like?</p>
+          
+          <div id="liked">
+            <div>
+            <input type="checkbox" id="design" name="goodThings" value="Design">
+              <label for="design">Design</label>
+            </div>
+            <div>
+            <input type="checkbox" id="content" name="goodThings" value="Content">
+            <label for="content">Content</label>
+            </div>
+            <div>
+            <input type="checkbox" id="service" name="goodThings" value="Service">
+            <label for="service">Service</label>
+            </div>
+            <div>
+            <input type="checkbox" id="products" name="goodThings" value="Products">
+            <label for="products">Products</label>
+            </div>
+          </div>
+
+          <label for="message">Comments / Suggestions:</label>
+          <textarea class="form-control" placeholder="What ya thinking?" name="message" id="message" cols="60" rows="10"></textarea>
+          <button class="btn btn-dark form-control" type='submit' value='submit'>Submit!</button>
+        </form>
+        <form action="/">
+          <button class="btn btn-dark form-control" type='submit' value='Reset'>Reset Form</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
