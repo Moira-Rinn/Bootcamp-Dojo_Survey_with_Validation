@@ -1,16 +1,18 @@
 from flask import Flask, render_template, request, redirect, session
 from locations import Locations
+from language import Languages
 
 
 app = Flask(__name__)
 app.secret_key = 'WouldntYouLikeToKnow'
 
 Locations = Locations()
+Languages = Languages()
 
 
 @app.route('/')
 def index():
-    return render_template('index.html', locations=Locations)
+    return render_template('index.html', locations=Locations, languages=Languages)
 
 
 @app.route('/process', methods=['POST'])

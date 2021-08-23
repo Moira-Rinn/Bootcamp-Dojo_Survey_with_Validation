@@ -12,66 +12,16 @@
           <input class="form-control form-control-sm" type="text" placeholder="Last Name" name="lastName" id="lastName">
 
           <input class="form-control form-control-sm" type="text" placeholder="Email" name="email" id="email">
-          
+
           <label for="location">Dojo Location:</label>
           <select class="form-control form-control-sm" name="location" id="location">
-            <option value="New York City">New York City, New York</option>
-            <option value="Los Angeles">Los Angeles, California</option>
-            <option value="Chicago">Chicago, Illinois</option>
-            <option value="Houston">Houston, Texas</option>
-            <option value="Phoenix">Phoenix, Arizona</option>
-            <option value="Philadelphia">Philadelphia, Pennsylvania</option>
-            <option value="San Antonio">San Antonio, Texas</option>
-            <option value="San Diego">San Diego, California</option>
-            <option value="Dallas">Dallas, Texas</option>
-            <option value="Austin">Austin, Texas</option>
-            <option value="San Jose">San Jose, California</option>
-            <option value="Fort Worth">Fort Worth, Texas</option>
-            <option value="Jacksonville">Jacksonville, Florida</option>
-            <option value="Columbus">Columbus, Ohio</option>
-            <option value="Charlotte">Charlotte, North Carolina</option>
-            <option value="Indianapolis">Indianapolis, Indiana</option>
-            <option value="San Francisco">San Francisco, California</option>
-            <option value="Seattle">Seattle, Washington</option>
-            <option value="Denver">Denver, Colorado</option>
-            <option value="Washington">Washington, District of Columbia</option>
-            <option value="Boston">Boston, Massachusetts</option>
-            <option value="El Paso">El Paso, Texas</option>
-            <option value="Nashville">Nashville, Tennessee</option>
-            <option value="Oklahoma City">Oklahoma City, Oklahoma</option>
-            <option value="Las Vegas">Las Vegas, Nevada</option>
-            <option value="Detroit">Detroit, Michigan</option>
-            <option value="Portland">Portland, Oregon</option>
-            <option value="Memphis">Memphis, Tennessee</option>
-            <option value="Louisville">Louisville, Kentucky</option>
-            <option value="Milwaukee">Milwaukee, Wisconsin</option>
-            <option value="Baltimore">Baltimore, Maryland</option>
-            <option value="Albuquerque">Albuquerque, New Mexico</option>
-            <option value="Tucson">Tucson, Arizona</option>
-            <option value="Mesa">Mesa, Arizona</option>
-            <option value="Fresno">Fresno, California</option>
-            <option value="Sacramento">Sacramento, California</option>
-            <option value="Atlanta">Atlanta, Georgia</option>
-            <option value="Kansas City">Kansas City, Missouri</option>
-            <option value="Colorado Springs">Colorado Springs, Colorado</option>
-            <option value="Raleigh">Raleigh, North Carolina</option>
-            <option value="Omaha">Omaha, Nebraska</option>
-            <option value="Miami">Miami, Florida</option>
-            <option value="Long Beach">Long Beach, California</option>
-            <option value="Virginia Beach">Virginia Beach, Virginia</option>
-            <option value="Oakland">Oakland, California</option>
-            <option value="Minneapolis">Minneapolis, Minnesota</option>
-            <option value="Tampa">Tampa, Florida</option>
-            <option value="Tulsa">Tulsa, Oklahoma</option>
-            <option value="Arlington">Arlington, Texas</option>
-            <option value="Wichita">Wichita, Kansas"</option>
-          <!-- {#  {% for i in range(locations) %}
-              <option value="{{location[i]}}">{{location[i]}}</option>
-            {% endfor %}#} -->
+            {% for i in range(locations|length) %}
+              <option value="{{locations[i]}}">{{locations[i]}}</option>
+            {% endfor %}
           </select>
           <label for="progLanguage">Favorite Programming Language:</label>
           <select class="form-control form-control-sm" name="progLanguage" id="progLanguage">
-            <option value="Python">Python</option>
+            <!-- <option value="Python">Python</option>
             <option value="JavaScript">JavaScript</option>
             <option value="PHP">PHP</option>
             <option value="Java">Java</option>
@@ -81,7 +31,10 @@
             <option value="C">C</option>
             <option value="Rust">Rust</option>
             <option value="Cobalt">Cobalt</option>
-            <option value="Basic">Basic</option>
+            <option value="Basic">Basic</option> -->
+            {% for i in range(languages|length) %}
+              <option value="{{languages[i]}}">{{languages[i]}}</option>
+            {% endfor %}
           </select>
 
           <p>Satisfied with your visit?</p>
