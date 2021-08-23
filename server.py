@@ -22,7 +22,7 @@ def sesData():
     session['progLanguage'] = request.form['progLanguage']
     session['satisfaction'] = request.form['satisfaction']
     session['willReturn'] = request.form['willReturn']
-    session['goodThings'] = request.form['goodThings']
+    session['goodThings'] = request.form.getlist('goodThings')
     session['message'] = request.form['message']
 
     return redirect('/submitted')

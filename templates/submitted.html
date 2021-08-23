@@ -6,47 +6,52 @@
       <h2>Dojo Survey - Submitted!!</h2>
       <h1>Thank You!!</h1>
       <div>
-        <table class="table table-dark table-striped table-hover">
-          <tbody>
-            <tr>
-              <th scope="row">First Name:</th>
-              <td>{{session['firstName']}}</td>
-            </tr>
-            <tr>
-              <th scope="row">Last Name:</th>
-              <td>{{session['lastName']}}</td>
-            </tr>
-            <tr>
-              <th scope="row">Email:</th>
-              <td>{{session['email']}}</td>
-            </tr>
-            <tr>
-              <th scope="row">Location:</th>
-              <td>{{session['location']}}</td>
-            </tr>
-            <tr>
-              <th scope="row">Fav Language:</th>
-              <td>{{session['progLanguage']}}</td>
-            </tr>
-            <tr>
-              <th scope="row">Satisfied?</th>
-              <td>{{session['satisfaction']}}</td>
-            </tr>
-            <tr>
-              <th scope="row">Returning?</th>
-              <td>{{session['willReturn']}}</td>
-            </tr>
-            <tr>
-              <th scope="row">Returning?</th>
-              <td>{{session['goodThings']}}</td>
-            </tr>
-            <tr>
-              <th scope="row">Thoughts:</th>
-              <td>{{session['message']}}</td>
-            </tr>
-          </tbody>
-        </table>
-        <h1>{{session['goodThings']}}</h1>
+        <div id="tableDiv">
+          <table>
+            <tbody>
+              <tr>
+                <th scope="row">First Name:</th>
+                <td>{{session['firstName']}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Last Name:</th>
+                <td>{{session['lastName']}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Email:</th>
+                <td>{{session['email']}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Location:</th>
+                <td>{{session['location']}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Fav Language:</th>
+                <td>{{session['progLanguage']}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Satisfied?</th>
+                <td>{{session['satisfaction']}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Returning?</th>
+                <td>{{session['willReturn']}}</td>
+              </tr>
+              <tr>
+                <th rowspan="{{ session['goodThings']|length +1 }}" scope="row">Liked:</th>
+                {% for thing in session['goodThings'] %}
+                <tr>
+                  <td>{{thing}}</td>
+                </tr>
+                {% endfor %}
+              </tr>
+              <tr>
+                <th scope="row">Thoughts:</th>
+                <td><p>{{ session['message'] }}</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <form action="/">
           <button class="btn btn-dark form-control" type='submit' value='back'>Go Back</button>
         </form>
