@@ -11,47 +11,56 @@
             <tbody>
               <tr>
                 <th scope="row">First Name:</th>
-                <td>{{session['firstName']}}</td>
+                <td>{{new_survey.first_name}}</td>
               </tr>
               <tr>
                 <th scope="row">Last Name:</th>
-                <td>{{session['lastName']}}</td>
+                <td>{{new_survey.last_name}}</td>
               </tr>
               <tr>
                 <th scope="row">Email:</th>
-                <td>{{session['email']}}</td>
+                <td>{{new_survey.email}}</td>
               </tr>
               <tr>
                 <th scope="row">Location:</th>
-                <td>{{session['location']}}</td>
+                <td>{{new_survey.location}}</td>
               </tr>
               <tr>
                 <th scope="row">Fav Language:</th>
-                <td>{{session['progLanguage']}}</td>
+                <td>{{new_survey.progLanguage}}</td>
               </tr>
               <tr>
                 <th scope="row">Satisfied?</th>
-                <td>{{session['satisfaction']}}</td>
+                <td>{{new_survey.satisfaction}}</td>
               </tr>
               <tr>
                 <th scope="row">Returning?</th>
-                <td>{{session['willReturn']}}</td>
+                <td>{{new_survey.willReturn}}</td>
               </tr>
               <tr>
-                <th rowspan="{{ session['goodThings']|length +1 }}" scope="row">Liked:</th>
-                {% for thing in session['goodThings'] %}
-                <tr>
-                  <td>{{thing}}</td>
-                </tr>
-                {% endfor %}
+                <th scope="row">Design?</th>
+                <td>{{new_survey.design}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Content</th>
+                <td>{{new_survey.willReturn}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Services?</th>
+                <td>{{new_survey.services}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Products?</th>
+                <td>{{new_survey.products}}</td>
               </tr>
               <tr>
                 <th scope="row">Thoughts:</th>
-                <td><p>{{ session['message'] }}</p></td>
+                <td><p>{{ new_survey.message }}</p></td>
               </tr>
             </tbody>
           </table>
         </div>
+
         <form action="/">
           <button class="btn btn-dark form-control" type='submit' value='back'>Go Back</button>
         </form>
