@@ -39,4 +39,4 @@ def submitted(survey_id):
 
     results = Survey.get_all(query, data)
 
-    return render_template("details_page.html", survey=results[0])
+    return render_template("submitted.html", new_survey=results[0])
