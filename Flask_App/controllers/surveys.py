@@ -12,6 +12,7 @@ def index():
 
 @app.route('/create/survey', methods=['POST'])
 def create_survey():
+
     data = {
         'first_name': request.form['firstName'],
         'last_name': request.form['lastName'],
@@ -26,6 +27,7 @@ def create_survey():
         'products': request.form['products'],
         'message': request.form['message']
     }
+
     if not Survey.registration_validation(request.form):
         return redirect('/')
     new_survey = Survey.save(data)
