@@ -79,6 +79,7 @@ p {
 table {
   width: 100%;
   color: #fafafa;
+  opacity: 0.9;
 }
 th, td{
   font-weight: 600;

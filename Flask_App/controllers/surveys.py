@@ -21,12 +21,21 @@ def create_survey():
         'progLanguages': request.form['progLanguages'],
         'satisfaction': request.form['satisfaction'],
         'willReturn': int(request.form['willReturn']),
-        'design': request.form['design'],
-        'content': request.form['content'],
-        'services': request.form['services'],
-        'products': request.form['products'],
+        'design': " ",
+        'content': " ",
+        'services': " ",
+        'products': " ",
         'message': request.form['message']
     }
+
+    if 'design' in request.form:
+        data['design'] = request.form['design']
+    if 'content' in request.form:
+        data['content'] = request.form['content']
+    if 'services' in request.form:
+        data['services'] = request.form['services']
+    if 'products' in request.form:
+        data['products'] = request.form['products']
 
     if not Survey.registration_validation(request.form):
         return redirect('/')
