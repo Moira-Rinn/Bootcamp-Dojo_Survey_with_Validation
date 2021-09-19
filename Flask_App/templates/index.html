@@ -18,12 +18,23 @@
             {% endfor %}
           </select>
 
-          <label for="progLanguage">Favorite Programming Language:</label>
-          <select class="form-control form-control-sm" name="progLanguage" id="progLanguage">
+          <label for="progLanguages">Favorite Programming Language:</label>
+          <select class="form-control form-control-sm" name="progLanguages" id="progLanguages">
             {% for i in range(languages|length) %}
               <option value="{{languages[i]}}">{{languages[i]}}</option>
             {% endfor %}
           </select>
+
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <div class="error">
+                {% for message in messages %}
+                  <p>{{message|safe}}</p>
+                {% endfor %}
+              </div>
+            {%endif%}
+  
+          {% endwith %}
 
           <p>Satisfied with your visit?</p>
 
@@ -75,7 +86,7 @@
             </div>
 
             <div>
-              <input type="radio" id="ten" name="satisfaction" value="Ecstasy!!!">
+              <input type="radio" id="ten" name="satisfaction" value="Ecstasy!!!" checked>
               <label for="ten">10 Ecstasy!</label>
             </div>
 
@@ -85,11 +96,11 @@
 
           <div id="returning">
             <div>
-            <input type="radio" id="yesReturning" name="willReturn" value="YES!!!">
+            <input type="radio" id="yesReturning" name="willReturn" value="1" checked>
               <label for="yesReturning">Absolutely!!</label>
             </div>
             <div>
-            <input type="radio" id="notReturning" name="willReturn" value=":( :( :(">
+            <input type="radio" id="notReturning" name="willReturn" value="0">
             <label for="notReturning">Nah, probably not...</label>
             </div>
           </div>
@@ -98,19 +109,19 @@
 
           <div id="liked">
             <div>
-            <input type="checkbox" id="design" name="design" value="Design">
+            <input type="checkbox" id="design" name="design" value='Design'>
               <label for="design">Design</label>
             </div>
             <div>
-            <input type="checkbox" id="content" name="content" value="Content">
+            <input type="checkbox" id="content" name="content" value='Content'>
             <label for="content">Content</label>
             </div>
             <div>
-            <input type="checkbox" id="services" name="services" value="Services">
+            <input type="checkbox" id="services" name="services" value='Services'>
             <label for="services">Services</label>
             </div>
             <div>
-            <input type="checkbox" id="products" name="products" value="Products">
+            <input type="checkbox" id="products" name="products" value='Products'>
             <label for="products">Products</label>
             </div>
           </div>

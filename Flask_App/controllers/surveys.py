@@ -17,16 +17,20 @@ def create_survey():
         'last_name': request.form['lastName'],
         'email': request.form['email'],
         'location': request.form['location'],
-        'progLanguage': request.form['progLanguage'],
+        'progLanguages': request.form['progLanguages'],
         'satisfaction': request.form['satisfaction'],
-        'willReturn': request.form['willReturn'],
+        'willReturn': int(request.form['willReturn']),
         'design': request.form['design'],
         'content': request.form['content'],
         'services': request.form['services'],
         'products': request.form['products'],
         'message': request.form['message']
     }
+    if not Survey.registration_validation(request.form):
+        return redirect('/')
     new_survey = Survey.save(data)
+    session['Survey_name'] = request.form['firstName']
+
     return redirect(f'/submitted/{new_survey}')
 
 

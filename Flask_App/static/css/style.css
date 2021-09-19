@@ -93,3 +93,14 @@ td {border-right: none;}
   border: 1px solid #fafafa;
   border-radius: 5px;
 }
+
+.error {
+  color: rgb(196, 75, 75);
+  border: 5px solid rgb(196, 75, 75);
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.error span {
+  font-weight: 900;
+}

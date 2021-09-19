@@ -4,7 +4,7 @@
   <div class="container">
     <div class="wrapper">
       <h2>Dojo Survey - Submitted!!</h2>
-      <h1>Thank You!!</h1>
+      <h1>Thank You {{session['Survey_name']}}!!</h1>
       <div>
         <div id="tableDiv">
           <table>
@@ -43,7 +43,7 @@
               </tr>
               <tr>
                 <th scope="row">Content</th>
-                <td>{{new_survey.willReturn}}</td>
+                <td>{{new_survey.content}}</td>
               </tr>
               <tr>
                 <th scope="row">Services?</th>
